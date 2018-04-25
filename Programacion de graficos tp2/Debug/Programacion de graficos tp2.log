@@ -1,2 +1,3 @@
 ﻿  Main.cpp
-  Programacion de graficos tp2.vcxproj -> C:\Users\lean1\Desktop\Programacion de graficos tp2\Debug\Programacion de graficos tp2.exe
+c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(28): warning C4101: 'srcR': variable local sin referencia
+  Programacion de graficos tp2.vcxproj -> C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\Debug\Programacion de graficos tp2.exe

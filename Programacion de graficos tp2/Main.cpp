@@ -1,48 +1,107 @@
 #include <iostream>
 #include <SDL.h>
+#include <SDL_image.h>
 using namespace std;
-int main(int, char**) {
 
-	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
-		return 1;
-	}
+#define X 600
+#define Y 600
 
-	SDL_Window *win = SDL_CreateWindow("Hello World!", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
-	if (win == nullptr) {
-		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
+int main(int, char** argv) {
+
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Error", SDL_GetError(), NULL);
 		SDL_Quit();
 		return 1;
 	}
 
-	/*while (!quit)
+	int gameOver;
+	int typeEvent;
+	const unsigned char *Keys;
+	int  posx = 0;
+	int  posy = 0;
+
+	
+	SDL_Window *window;
+	SDL_Renderer *renderer;
+	SDL_Event event;
+	SDL_Texture *playerTexture;
+	SDL_Rect srcR, destR;
+
+	window = SDL_CreateWindow("NoSeMeOcureNingunNombre2", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, X, Y, SDL_WINDOW_SHOWN);
+
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+
+	SDL_Surface *tmpSurface = IMG_Load("player.png");
+	playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+	SDL_FreeSurface(tmpSurface);
+
+	Keys = SDL_GetKeyboardState(NULL);
+
+	
+
+	gameOver = 0;
+	
+	destR.h = 64;
+	destR.w = 64;
+	destR.x = posx;
+	destR.y = posy;
+
+	while (!gameOver)
 	{
-		//Handle events on queue
-		while (SDL_PollEvent(&e) != 0)
+
+		
+
+		if (SDL_PollEvent(&event))
 		{
-			//User requests quit
-			if (e.type == SDL_QUIT)
+			typeEvent = event.type;
+			if (typeEvent == SDL_QUIT)
 			{
-				quit = true;
+				gameOver = 1;
 			}
+			if (typeEvent == SDL_KEYDOWN)
+			{
+				if (Keys[SDL_SCANCODE_ESCAPE])
+				{
+					gameOver = 1;
+				}				
+
+			}
+
+			if (Keys[SDL_SCANCODE_LEFT])
+			{
+				posx = posx - 10;
+			}
+			if (Keys[SDL_SCANCODE_RIGHT])
+			{
+				posx = posx + 10;
+
+			}
+			if (Keys[SDL_SCANCODE_UP])
+			{
+				posy = posy - 10;
+
+			}
+			if (Keys[SDL_SCANCODE_DOWN])
+			{
+				posy = posy + 10;
+
+			}
+			destR.x = posx;
+			destR.y = posy;
+			
 		}
 
-		//Clear screen
-		SDL_RenderClear(gRenderer);
-
-		//Render texture to screen
-		SDL_RenderCopy(gRenderer, gTexture, NULL, NULL);
-
-		//Update screen
-		SDL_RenderPresent(gRenderer);
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+		SDL_RenderClear(renderer);
+		SDL_RenderCopy(renderer, playerTexture, NULL, &destR);
+		SDL_RenderPresent(renderer);
 	}
 
-	*/
-
-	SDL_Delay(3000);
-
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
 	SDL_Quit();
-	cin.get();
+
 	
 	return 0;
 }

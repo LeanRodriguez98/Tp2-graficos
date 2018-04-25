@@ -1,2 +1,2 @@
 ﻿  Main.cpp
-  Programacion de graficos tp2.vcxproj -> C:\Users\lean1\Desktop\Programacion de graficos tp2\x64\Debug\Programacion de graficos tp2.exe
+c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(2): fatal error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
