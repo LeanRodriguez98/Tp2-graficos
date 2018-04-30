@@ -3,6 +3,7 @@
 #include <time.h>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 using namespace std;
 
 #define X 600
@@ -10,11 +11,20 @@ using namespace std;
 
 int main(int, char** argv) {
 	srand(time(NULL));
+
+	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Error", SDL_GetError(), NULL);
 		SDL_Quit();
 		return 1;
 	}
+	/*if (Mix_OpenAudio(44100, MIX_DEFAULT_CHANNELS,2,2048) < 0)
+	{
+		cout << "Error: " << Mix_GetError() << endl;
+		cin.get();
+	}*/
+
+	// no puedo cargar el audio, prove con una infinidad de archivos y siempre me da el error de que desconoce el formato.
 
 	int gameOver;
 	int typeEvent;
@@ -48,14 +58,18 @@ int main(int, char** argv) {
 	SDL_Texture *playerTexture;
 	SDL_Rect srcR, destR;
 
+	/*Mix_Music *fondo = Mix_LoadMUS("tema0.wav");
+	Mix_Music *hit1 = Mix_LoadMUS("hit1.mp3");
+	Mix_Music *hit2 = Mix_LoadMUS("hit2.mp3");
+	Mix_Music *gong = Mix_LoadMUS("gong.mp3");*/
+
+
 	window = SDL_CreateWindow("NoSeMeOcureNingunNombre2", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, X, Y, SDL_WINDOW_SHOWN);
 
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 
-	SDL_Surface *tmpSurface = IMG_Load("player.png");
-	playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
-	SDL_FreeSurface(tmpSurface);
+	
 
 	Keys = SDL_GetKeyboardState(NULL);
 
@@ -63,39 +77,27 @@ int main(int, char** argv) {
 
 	gameOver = 0;
 	
-	destR.h = 64;
-	destR.w = 64;
+	destR.h = 50 * 4;
+	destR.w = 26 * 4;
 	int  posx = X / 2 - destR.w /2;
 	int  posy = Y / 2 - destR.h / 2;
 	destR.x = posx;
 	destR.y = posy;
 
+	SDL_Surface *tmpSurface = IMG_Load("i4.png");
+	playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+	SDL_FreeSurface(tmpSurface);
+
 	while (!gameOver)
 	{
-		/*while (Breductor == false)
+		/*if (!Mix_PlayingMusic())
 		{
-			if (Keys[SDL_SCANCODE_Z])
-			{
-				reductor = 50;
-				Breductor = true;
-				cout << "h" << endl;
-
-			}
-			if (Keys[SDL_SCANCODE_X])
-			{
-				reductor = 100;
-				Breductor = true;
-				cout << "h" << endl;
-
-			}
-			if (Keys[SDL_SCANCODE_C])
-			{
-				reductor = 150;
-				Breductor = true;
-				cout << "h" << endl;
-
-			}
+			Mix_PlayMusic(fondo, -1);
+			cout << "culo" << endl;
 		}*/
+
+
+		
 		timer++;
 		if (timer >= tempo)
 		{
@@ -113,6 +115,9 @@ int main(int, char** argv) {
 				B = 0;
 				bool0 = false;
 				cout << "arriba" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("d1.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 1)
 			{
@@ -121,6 +126,9 @@ int main(int, char** argv) {
 				B = 255;
 				bool1 = false;
 				cout << "abajo" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("i1.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 2)
 			{
@@ -129,6 +137,9 @@ int main(int, char** argv) {
 				B = 0;			
 				bool2 = false;
 				cout << "izquierda" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("i2.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 3)
 			{
@@ -137,6 +148,9 @@ int main(int, char** argv) {
 				B = 0;
 				bool3 = false;
 				cout << "derecha" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("d2.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 4)
 			{
@@ -145,6 +159,9 @@ int main(int, char** argv) {
 				B = 255;
 				bool4 = false;
 				cout << "w" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("d3.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 5)
 			{
@@ -153,6 +170,9 @@ int main(int, char** argv) {
 				B = 0;
 				bool5 = false;
 				cout << "s" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("i3.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 6)
 			{
@@ -161,6 +181,9 @@ int main(int, char** argv) {
 				B = 255;
 				bool6 = false;
 				cout << "a" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("i4.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 			if (color == 7)
 			{
@@ -169,6 +192,9 @@ int main(int, char** argv) {
 				B = 255;
 				bool7 = false;
 				cout << "d" << endl;
+				SDL_Surface *tmpSurface = IMG_Load("d4.png");
+				playerTexture = SDL_CreateTextureFromSurface(renderer, tmpSurface);
+				SDL_FreeSurface(tmpSurface);
 			}
 
 			timer = 0;
@@ -180,6 +206,8 @@ int main(int, char** argv) {
 
 			loop = true;
 		}
+
+		
 
 		if (SDL_PollEvent(&event))
 		{
@@ -204,7 +232,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_UP] && bool0 == false && loop == true)
 			{
-				posy = posy - 10;
+				
 				bool0 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -221,7 +249,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_DOWN] && bool1 == false && loop == true)
 			{
-				posy = posy + 10;
+				
 				bool1 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -239,7 +267,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_LEFT] && bool2 == false && loop == true)
 			{
-				posx = posx - 10;
+				
 				bool2 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -256,7 +284,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_RIGHT] && bool3 == false && loop == true)
 			{
-				posx = posx + 10;
+				
 				bool3 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -273,7 +301,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_W] && bool4 == false && loop == true)
 			{
-				posy = posy - 10;
+				
 				bool4 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -291,7 +319,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_S] && bool5 == false && loop == true)
 			{
-				posy = posy + 10;
+				
 				bool5 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -308,7 +336,7 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_A] && bool6 == false && loop == true)
 			{
-				posx = posx - 10;
+				
 				bool6 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
@@ -326,39 +354,12 @@ int main(int, char** argv) {
 			}
 			if (Keys[SDL_SCANCODE_D] && bool7 == false && loop == true)
 			{
-				posx = posx + 10;
+				
 				bool7 = true;
 				cout << "seguiste el ritmo" << endl;
 				loop = false;
 
 			}
-			
-		
-
-			
-			destR.x = posx;
-			destR.y = posy;
-			if (destR.x <= 0)
-			{
-				destR.x = 0;
-				posx = 0;
-			}
-			if (destR.x + destR.w >= X)
-			{
-				destR.x = X - destR.w;
-				posx = X - destR.w;
-			}
-			if (destR.y <= 0)
-			{
-				destR.y = 0;
-				posy = 0;
-			}
-			if (destR.y + destR.h >= Y)
-			{
-				destR.y = Y - destR.h;
-				posy = Y - destR.h;
-			}
-			
 		}	
 
 		if ((timer == tempo-1) && (bool0 == false || bool1 == false || bool2 == false || bool3 == false || bool4 == false || bool5 == false || bool6 == false || bool7 == false))
