@@ -138,7 +138,7 @@ int main(int, char** argv) {
 	InicioTexture = SDL_CreateTextureFromSurface(renderer, inicioSurface);
 	SDL_FreeSurface(inicioSurface);
 
-	//FreeConsole();
+	
 	
 	while (!gameOver)
 	{
@@ -165,6 +165,9 @@ int main(int, char** argv) {
 				} while (random == color);
 
 				color = random;
+
+				destR.x = posx;
+				destR.y = posy;
 
 				if (color == 0)
 				{
@@ -292,6 +295,8 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.y -= 1;
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", negro);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -307,6 +312,7 @@ int main(int, char** argv) {
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
 
+					destR.y -= 1;
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", blanco);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
@@ -325,6 +331,8 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.y += 1;
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", blanco);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -339,6 +347,9 @@ int main(int, char** argv) {
 					bool1 = true;
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
+
+					destR.y += 1;
+
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", negro);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
@@ -357,6 +368,9 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.x -= 1;
+
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", rojo);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -372,6 +386,8 @@ int main(int, char** argv) {
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
 
+					destR.x -= 1;
+					
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", cyan);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -389,6 +405,8 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.x += 1;
+					
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", verde);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -403,6 +421,9 @@ int main(int, char** argv) {
 					bool3 = true;
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
+
+					destR.x += 1;
+
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", magenta);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
@@ -420,6 +441,9 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.y -= 1;
+
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", azul);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -435,6 +459,9 @@ int main(int, char** argv) {
 					bool4 = true;
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
+
+					destR.y -= 1;
+
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", amarillo);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
@@ -453,6 +480,9 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.y += 1;
+
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", amarillo);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -467,6 +497,9 @@ int main(int, char** argv) {
 					bool5 = true;
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
+
+					destR.y += 1;
+
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", azul);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
@@ -486,6 +519,9 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.x -= 1;
+
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", cyan);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -500,6 +536,9 @@ int main(int, char** argv) {
 					bool6 = true;
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
+
+					destR.x -= 1;
+
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", rojo);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
@@ -518,6 +557,9 @@ int main(int, char** argv) {
 					textSurface = nullptr;
 					text = nullptr;
 
+					destR.x += 1;
+
+
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "No seguiste el ritmo", magenta);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
 					SDL_FreeSurface(textSurface);
@@ -531,6 +573,9 @@ int main(int, char** argv) {
 					bool7 = true;
 					cout << "seguiste el ritmo" << endl;
 					loop = false;
+
+					destR.x += 1;
+
 
 					SDL_Surface *textSurface = TTF_RenderText_Solid(font, "Seguiste el ritmo", verde);
 					text = SDL_CreateTextureFromSurface(renderer, textSurface);
