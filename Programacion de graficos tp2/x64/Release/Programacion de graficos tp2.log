@@ -1,6 +1,6 @@
 ﻿  Main.cpp
-c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(14): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(67): warning C4101: 'srcR': variable local sin referencia
+c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(22): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(75): warning C4101: 'srcR': variable local sin referencia
   Generando código
   1 of 12 functions ( 8.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

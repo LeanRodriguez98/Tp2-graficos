@@ -5,12 +5,20 @@
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
+#include <Windows.h>
 using namespace std;
+
+
+
+
 
 #define X 600
 #define Y 600
 
 int main(int, char** argv) {
+
+
+	
 	srand(time(NULL));
 
 	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
@@ -66,7 +74,7 @@ int main(int, char** argv) {
 	SDL_Texture *InicioTexture;
 	SDL_Rect srcR, destR, inicioR;
 
-	window = SDL_CreateWindow("NoSeMeOcureNingunNombre2", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, X, Y, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("Manten el ritmo", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, X, Y, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	TTF_Font *font = TTF_OpenFont("font.otf", 150);
@@ -130,6 +138,8 @@ int main(int, char** argv) {
 	InicioTexture = SDL_CreateTextureFromSurface(renderer, inicioSurface);
 	SDL_FreeSurface(inicioSurface);
 
+	//FreeConsole();
+	
 	while (!gameOver)
 	{
 		if (inicio == true)
