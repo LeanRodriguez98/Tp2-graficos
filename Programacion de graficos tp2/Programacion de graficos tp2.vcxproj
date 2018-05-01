@@ -81,7 +81,7 @@
     <Link>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_mixer-2.0.2\lib\x86;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_ttf-2.0.14\lib\x86;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_image-2.0.3\lib\x86;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)SDL2-2.0.8\SDL2_mixer-2.0.2\lib\x86;$(SolutionDir)SDL2-2.0.8\SDL2_ttf-2.0.14\lib\x86;$(SolutionDir)SDL2-2.0.8\SDL2_image-2.0.3\lib\x86;$(SolutionDir)SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -93,12 +93,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)SDL2-2.0.8\SDL2_ttf-2.0.14\include;$(SolutionDir)SDL2-2.0.8\SDL2_mixer-2.0.2\include;$(SolutionDir)SDL2-2.0.8\SDL2_image-2.0.3\include;$(SolutionDir)SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\lib\x64;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_image-2.0.3\lib\x64;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_mixer-2.0.2\lib\x64;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_ttf-2.0.14\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -116,7 +116,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_mixer-2.0.2\lib\x86;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_ttf-2.0.14\lib\x86;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\SDL2_image-2.0.3\lib\x86;C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)SDL2-2.0.8\SDL2_mixer-2.0.2\lib\x86;$(SolutionDir)SDL2-2.0.8\SDL2_ttf-2.0.14\lib\x86;$(SolutionDir)SDL2-2.0.8\SDL2_image-2.0.3\lib\x86;$(SolutionDir)SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -130,13 +130,13 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)SDL2-2.0.8\SDL2_ttf-2.0.14\include;$(SolutionDir)SDL2-2.0.8\SDL2_mixer-2.0.2\include;$(SolutionDir)SDL2-2.0.8\SDL2_image-2.0.3\include;$(SolutionDir)SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\lean1\Desktop\Programacion de graficos tp2\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)SDL2-2.0.8\SDL2_ttf-2.0.14\lib\x64;$(SolutionDir)SDL2-2.0.8\SDL2_mixer-2.0.2\lib\x64;$(SolutionDir)SDL2-2.0.8\SDL2_image-2.0.3\lib\x64;$(SolutionDir)SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>

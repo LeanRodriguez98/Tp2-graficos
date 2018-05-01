@@ -1,2 +1,4 @@
 ﻿  Main.cpp
-c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(2): fatal error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(14): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+c:\users\lean1\desktop\programacion de graficos tp2\tp2-graficos\programacion de graficos tp2\main.cpp(67): warning C4101: 'srcR': variable local sin referencia
+  Programacion de graficos tp2.vcxproj -> C:\Users\lean1\Desktop\Programacion de graficos tp2\Tp2-graficos\x64\Debug\Programacion de graficos tp2.exe

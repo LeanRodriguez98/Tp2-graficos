@@ -41,9 +41,9 @@ int main(int, char** argv) {
 	int R = 0;	
 	int G = 0;	
 	int B = 0;
-	int tempo = 5550;
+	int tempo = 5200;
 	int timer = tempo;
-	int reductor = 150;
+	int reductor = 300;
 	bool Breductor = false;
 
 	bool bool0 = true;
@@ -82,11 +82,11 @@ int main(int, char** argv) {
 	SDL_Color magenta = { 255,0,255,255 };
 
 
-	SDL_Surface *textSurface = TTF_RenderText_Solid(font,"inicio",transparente);
+	SDL_Surface *textSurface = TTF_RenderText_Solid(font,"              ",transparente);
 	SDL_Texture *text = SDL_CreateTextureFromSurface(renderer,textSurface);
 	SDL_FreeSurface(textSurface);
 	SDL_Rect textRect;
-	textRect.x = 100;
+	textRect.x = 45;
 	textRect.y = 400;
 
 	SDL_QueryTexture(text, NULL, NULL, &textRect.w, &textRect.h);
@@ -545,7 +545,7 @@ int main(int, char** argv) {
 
 			}
 
-			if (tempo <= 50)
+			if (tempo <= 100)
 			{
 				
 				cout << "ganaste" << endl;
